@@ -19,18 +19,23 @@ exports.getSuggestion = async (req, res) => {
         );
     } else {
       //day query factoring
-
       dishes.map((meal) => {
         meal.ingredients.map(
           (ingredient) =>
             (Possibleingredients = [...Possibleingredients, ingredient])
         );
       });
+
+      //Ingredients with no duplicates items
+      const usefulPossibleIngredients = Possibleingredients.filter(
+        (possibleIngredient, index) =>
+          Possibleingredients.indexOf(possibleIngredient) === index
+      );
       await axios
         .get(
           `http://localhost:3000/cooktime?ingredient=${
-            Possibleingredients[
-              Math.floor(Math.random() * Possibleingredients.length)
+            usefulPossibleIngredients[
+              Math.floor(Math.random() * usefulPossibleIngredients.length)
             ]
           }&day=${day}`
         )
