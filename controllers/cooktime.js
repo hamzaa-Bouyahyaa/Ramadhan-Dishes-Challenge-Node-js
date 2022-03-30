@@ -21,8 +21,7 @@ exports.getCookTime = async (req, res) => {
 
     //ingredient query factoring
     const usefulIngredient =
-      ingredient.toLowerCase().charAt(0).toUpperCase() + ingredient.slice(1);
-
+      ingredient.toLowerCase().charAt(0).toUpperCase() + ingredient.slice(1).toLowerCase();
     //prayertimes get
     await axios
       .get(
