@@ -1,5 +1,9 @@
 # Ramadhan-Dishes-Challenge-Node-js
 
+### `git clone`
+Clone the project with:\
+git clone https://github.com/hamzaa-Bouyahyaa/Ramadhan-Dishes-Challenge-Node-js.git
+
 ### `npm install`
 Don't forget to run the command above to install the necessary packages.
 ### `npm start`
