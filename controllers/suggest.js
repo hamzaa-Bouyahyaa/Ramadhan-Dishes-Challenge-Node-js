@@ -6,12 +6,12 @@ exports.getSuggestion = async (req, res) => {
     var meals;
     var Possibleingredients = [];
     const day = req.query.day;
-
     if (!day) {
       res
         .status(404)
         .send("please enter a day number to suggest you a meal darling");
-    } else if (parseInt(day) > 30 || parseInt(day) < 1) {
+    } else if (parseInt(day) > 30 || parseInt(day) < 1 || isNaN(parseInt(day))) {
+     
       res
         .status(404)
         .send(
